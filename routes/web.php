@@ -13,3 +13,5 @@ Route::get("/register", [UserController::class, 'register']);
 Route::get('/product',[ProductController::class,'product']);
 Route::get('/Reset',[UserController::class,'Reset']);
 Route::get('/Reset',[UserController::class,'Reset']);
+Route::get('/dashboard',[UserController::class,'dashboard']);
+Route::get('/user',[UserController::class,'user']);

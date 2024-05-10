@@ -27,24 +27,30 @@ class UserController extends Controller
 
           return view('index');
         }
-        public function register(Request $request){
+        public function register(){
 
-          $request->validate([
-            'username' => 'required|string|max:255|unique:users',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-          ]);
-
-          $user = User::create([
-            'name' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-
-        // Handle user registration success (e.g., redirect, login, etc.)
-       // return redirect('/')->with('success', 'Registration successful!');
 
       return view('register');
+
+
+
+
+
+}
+public function dashboard(){
+
+
+    return view('dashboard');
+
+
+
+
+
+}
+public function user(){
+
+
+    return view('user');
 
 
 
