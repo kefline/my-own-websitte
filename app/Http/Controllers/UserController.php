@@ -23,14 +23,52 @@ class UserController extends Controller
 
       return view('Reset');
     }
-    public function index(){
+    public function showindexForm()
+    {
+        return view('index');
+    }
 
-          return view('index');
+    public function index(Request $request) {
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        if (empty($email) || empty($password)) {
+            $errorMessage = 'Please fill in both email and password fields.';
+            return redirect('/index')->with('error', $errorMessage);
         }
-        public function register(){
+
+        // Basic email format check (limited effectiveness)
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errorMessage = 'Invalid email format.';
+            return redirect('/index')->with('error', $errorMessage);
+        }
+
+        // ... rest of your authentication logic
+    }
 
 
-      return view('register');
+
+        public function showRegistrationForm()
+        {
+            return view('register');
+        }
+        public function register(Request $request){
+            $request->validate([
+                'name' => 'required',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6',
+            ]);
+
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            return redirect('/index')->with('success', 'Registration successful! Please log in.');
+
+
+
 
 
 

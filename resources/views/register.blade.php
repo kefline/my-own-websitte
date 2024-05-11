@@ -10,6 +10,15 @@
       background-image: url('path/public/images/image1.jpg');  background-size: cover;  background-position: center;  background-repeat: no-repeat;
     }
   </style>
+  <script>
+    // JavaScript code to handle the click event of the register button
+    document.getElementById('registerButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        // Add your logic here to execute when the button is clicked
+        console.log('Register button clicked!');
+    });
+</script>
+
 </head>
 
 <body class="bg-gray-900 flex justify-center items-center h-screen bg-image">
@@ -46,10 +55,13 @@
       <input name="confirm_password" class="shadow appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id=" confirm_password" type="password" placeholder="...............">
       <p class="text-blue-800 text-xs italic">Enter a strong password.</p>
     </div>
-    <div class="flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Register
-      </button>
+    <!-- Ensure the register button has the appropriate HTML structure and Tailwind CSS classes -->
+<div class="flex items-center justify-between">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+Register
+    </button>
+
+
       <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/index">
       Already registered sign in here?
       </a>
