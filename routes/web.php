@@ -8,12 +8,12 @@ use App\Http\Controllers\LoginController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', [UserController::class, 'showindexForm'])->name('index');
-Route::get("/index", [UserController::class, 'index']);
-Route::get('/register', [UserController::class, 'showRegistrationForm']);
+Route::get('/indexForm', [UserController::class, 'indexForm']);
+Route::post("/index", [UserController::class, 'index'])->name('index');
+Route::get('/register1', [UserController::class, 'showRegistrationForm']);
 Route::post("/register", [UserController::class, 'register'])->name('register');
 Route::get('/product',[ProductController::class,'product']);
 Route::get('/Reset',[UserController::class,'Reset']);
-Route::get('/Reset',[UserController::class,'Reset']);
+
 Route::get('/dashboard',[UserController::class,'dashboard']);
 Route::get('/user',[UserController::class,'user']);

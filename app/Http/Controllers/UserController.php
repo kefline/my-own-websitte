@@ -23,9 +23,9 @@ class UserController extends Controller
 
       return view('Reset');
     }
-    public function showindexForm()
+    public function indexForm()
     {
-        return view('index');
+        return view('indexForm');
     }
 
     public function index(Request $request) {
@@ -50,7 +50,7 @@ class UserController extends Controller
 
         public function showRegistrationForm()
         {
-            return view('register');
+            return view('register1');
         }
         public function register(Request $request){
             $request->validate([
