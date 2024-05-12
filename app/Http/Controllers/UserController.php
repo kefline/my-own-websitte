@@ -25,7 +25,7 @@ class UserController extends Controller
     }
     public function indexForm()
     {
-        return view('indexForm');
+        return view('index');
     }
 
     public function index(Request $request) {
@@ -34,13 +34,13 @@ class UserController extends Controller
 
         if (empty($email) || empty($password)) {
             $errorMessage = 'Please fill in both email and password fields.';
-            return redirect('/index')->with('error', $errorMessage);
+            return redirect('/indexForm')->with('error', $errorMessage);
         }
 
         // Basic email format check (limited effectiveness)
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errorMessage = 'Invalid email format.';
-            return redirect('/index')->with('error', $errorMessage);
+            return redirect('/indexForm')->with('error', $errorMessage);
         }
 
         // ... rest of your authentication logic
@@ -50,7 +50,7 @@ class UserController extends Controller
 
         public function showRegistrationForm()
         {
-            return view('register1');
+            return view('register');
         }
         public function register(Request $request){
             $request->validate([
@@ -65,7 +65,7 @@ class UserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            return redirect('/index')->with('success', 'Registration successful! Please log in.');
+            return redirect('/indexForm')->with('success', 'Registration successful! Please log in.');
 
 
 

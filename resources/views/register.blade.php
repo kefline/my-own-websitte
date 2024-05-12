@@ -26,7 +26,7 @@
 
 <div class="w-full max-w-lg ">
 
-  <form class="bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4 " action="/index" method="post">
+  <form class="bg-white shadow-md rounded px-6 pt-6 pb-8 mb-4 " action="/indexForm" method="post">
     @csrf
 
     <div class="mb-4 ">
@@ -57,12 +57,12 @@
     </div>
     <!-- Ensure the register button has the appropriate HTML structure and Tailwind CSS classes -->
 <div class="flex items-center justify-between">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
 Register
     </button>
 
 
-      <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/index">
+      <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/indexForm">
       Already registered sign in here?
       </a>
     </div>
